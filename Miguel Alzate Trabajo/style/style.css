@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0%;
+}
+
+body{
+    font-family: 'Rubik', sans-serif;
+    background-color: rgb(225, 112, 112);
+}
+
+nav{
+    width: 100%;
+    background-color: rgb(21, 25, 26);
+}
+
+.menu{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.menu .lista{
+    display: inline-block;
+
+}
+
+.lista-r{
+    float: right;
+}
+
+.lista a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 15px 50px;
+}
+
+.lista a:hover{
+    background-color: tomato;
+} 
+
+/*Cards*/
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container-flex{
+    display: flex;
+    width: 90vh;
+}
+
+.panel{
+    height: 80vh;
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    color: black;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transform: flex 0.7s ease-in;
+    border: 2px solid white;
+    animation-name: moverArriba 1s ease-in;
+}
+
+.panel h3{
+    font-size: 24px;
+    position: absolute;
+    bottom:20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid blueviolet;
+    padding: 5px;
+}
+
+.panel.activa{
+    flex: 5px;
+    border: 2px solid  white;
+}
+
+.panel.activa h3{
+    opacity: 1;
+    transition: flex 0.3s ease-in 0.4s;
+}
+
+.container-table{
+    margin: 150px auto;
+    width: 80vh;
+}
+
+table{
+    background-color: white;
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+    animation: moverDerecha 5s ease-in;
+}
+
+td, th{
+    padding: 20px;
+}
+
+thead{
+    background-color: teal;
+    border-bottom: 5px solid #0f362d;
+    color: white;
+    font-size: 22px;
+}
+
+tr:nth-child(even){
+    background-color: #ddd;
+}
+
+tr:hover td{
+    background-color: rgba(0, 128, 128, 0.4);
+    color: white;
+}
+
+@keyframes moverArriba{
+    0%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moverDerecha{
+    0%{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@media screen and (max-width:480px){
+    .container{
+        width: 100vh;
+    }
+    
+    .panel:nth-last-of-type(4),
+    .panel:nth-last-of-type(5){
+        display: none;
+    }
+
+    .panel h3{
+        font-size: 18px;
+    }
+
+    .panel{
+        flex: 0.3;
+    }
+}
+
+
